@@ -5,7 +5,7 @@ namespace MapGenerator {
 	*/
 	class MapGenerator {
 	public:
-		int size;
+		int mapSize;
 
 		MapGenerator(int size);
 		void GenerateMap();
@@ -18,11 +18,20 @@ namespace MapGenerator {
 	* int size: size of generated map
 	*/
 	MapGenerator::MapGenerator(int size = 10) {
-		this->size = size;
+		this->mapSize = size;
 	}
 
 	void MapGenerator::GenerateMap () {
+		int mapSize = this->mapSize;
+		int* mapData = new int[mapSize];
 
+		for (int i = 0; i < mapSize; i++) {
+			int* row = new int[mapSize];
+			for (int j = 0; j < mapSize; j++) {
+
+			}
+			mapData[i] = row;
+		}
 	}
 
 

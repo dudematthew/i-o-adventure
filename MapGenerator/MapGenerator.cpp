@@ -7,6 +7,15 @@ using namespace std;
 int main()
 {
 	MapGenerator generator(12);
+	generator.GenerateMap();
 
-	cout << generator.GetSize();
+	auto generatedMap = generator.generatedMap;
+
+	for (int i = 0; i < generatedMap.size(); i++) {
+		cout << "x[";
+		for (int j = 0; j < generatedMap[j].size(); j++) {
+			cout << "y";
+		}
+		cout << "]";
+	}
 }

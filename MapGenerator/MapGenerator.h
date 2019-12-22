@@ -123,8 +123,9 @@ public:
 		for (int i = 0; i < randomPointsAmount; i++) {
 			RandomPoint randomPoint;
 
-			randomPoint.x = rand() % (mapSize - 2) + 1;
-			randomPoint.y = rand() % (mapSize - 2) + 1;
+			randomPoint.x = (rand() % (mapSize - 2)) + 1;
+			randomPoint.y = (rand() % (mapSize - 2)) + 1;
+
 			randomPoint.roomSize = rand() % ((int)floor(sqrt(mapSize)));
 
 			randomPoints.push_back(randomPoint);

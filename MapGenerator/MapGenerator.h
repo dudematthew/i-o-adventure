@@ -23,7 +23,7 @@ using namespace std;
 
 		MapGenerator(int size);
 		void GenerateMap();
-		string PreviewMap();
+		string PreviewMap(bool showTop);
 		int GetGeneratedMapSize();
 		vector <vector <vector <int>>> getGeneratedMap();
 		vector <RandomPoint> getRandomPoints();

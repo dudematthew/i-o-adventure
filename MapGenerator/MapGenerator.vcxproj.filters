@@ -16,6 +16,9 @@
     <Filter Include="Pliki nagłówkowe\MapGenerator">
       <UniqueIdentifier>{89a52bda-13a4-4078-b0e5-d04c1d54d2ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\MapGenerator\Subclasses">
+      <UniqueIdentifier>{d3f45b31-d7b9-4028-b174-c725cf86b8b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -41,11 +44,11 @@
     <ClCompile Include="PreviewMap.cpp">
       <Filter>Pliki nagłówkowe\MapGenerator</Filter>
     </ClCompile>
-    <ClCompile Include="RandomPoint.h">
-      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
-    </ClCompile>
     <ClCompile Include="GetFunctions.cpp">
       <Filter>Pliki nagłówkowe\MapGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomPoint.h">
+      <Filter>Pliki nagłówkowe\MapGenerator\Subclasses</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

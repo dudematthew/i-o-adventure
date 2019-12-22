@@ -5,7 +5,7 @@
 * Preview generated map
 * returns string representation of generated map
 */
-string MapGenerator::PreviewMap () {
+string MapGenerator::PreviewMap(bool showTop = 1) {
 	auto generatedMap = this->_generatedMap;
 
 	string output;
@@ -13,19 +13,27 @@ string MapGenerator::PreviewMap () {
 	output.append("First layer:\n");
 	for (int i = 0; i < generatedMap.size(); i++) {
 		for (int j = 0; j < generatedMap[i].size(); j++) {
-			output.append(to_string(generatedMap[i][j][0]));
-			output.append(" ");
+			if (generatedMap[i][j][0] == 1)
+				output.append(" ");
+			else
+				output.append("X");
+
+			if (generatedMap[i][j][0] >= 0)
+				output.append(" ");
 		}
 		output.append("\n");
 	}
-
-	output.append("Second layer:\n");
-	for (int i = 0; i < generatedMap.size(); i++) {
-		for (int j = 0; j < generatedMap[i].size(); j++) {
-			output.append(to_string(generatedMap[i][j][1]));
-			output.append(" ");
+	
+	if (showTop) {
+		output.append("Second layer:\n");
+		for (int i = 0; i < generatedMap.size(); i++) {
+			for (int j = 0; j < generatedMap[i].size(); j++) {
+				output.append(to_string(generatedMap[i][j][1]));
+				if (generatedMap[i][j][1] >= 0)
+					output.append(" ");
+			}
+			output.append("\n");
 		}
-		output.append("\n");
 	}
 
 	return output;

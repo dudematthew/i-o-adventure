@@ -13,12 +13,12 @@ int main()
 	string answer;
 
 	while (!stop) {
-		MapGenerator generator(12);
+		MapGenerator generator(24);
 		generator.GenerateMap();
 
-		cout << generator.PreviewMap();
+		cout << generator.PreviewMap(0);
 
-		cout << "Kontynuować? t / *";
+		cout << "Kontynuować? t / *\n>";
 		cin >> answer;
 
 		if (answer != "t")

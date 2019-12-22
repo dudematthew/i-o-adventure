@@ -8,6 +8,7 @@
 void MapGenerator::GenerateMap() {
 	int mapSize = this->mapSize;
 	vector <vector <vector <int>>> generatedMap;
+	vector <RandomPoint> randomPoints;
 
 	for (int i = 0; i < mapSize; i++) {
 		vector <vector <int>> x;
@@ -24,8 +25,6 @@ void MapGenerator::GenerateMap() {
 	// Calculate the amount of random points
 	int randomPointsAmount = (int)floor(sqrt(mapSize));
 
-	vector <RandomPoint> randomPoints;
-
 	// Generate random points coordinates and
 	// save them to randomPoints 
 	for (int i = 0; i < randomPointsAmount; i++) {
@@ -34,7 +33,7 @@ void MapGenerator::GenerateMap() {
 		randomPoint.x = (rand() % (mapSize - 2)) + 1;
 		randomPoint.y = (rand() % (mapSize - 2)) + 1;
 
-		randomPoint.roomSize = rand() % ((int)floor(sqrt(mapSize)));
+		randomPoint.roomSize = rand() % ((int)floor(mapSize / 2));
 
 		randomPoints.push_back(randomPoint);
 	}
@@ -121,6 +120,8 @@ void MapGenerator::GenerateMap() {
 				generatedMap[yPointer][xPointer][0] = 1;
 			}
 		}
+
+
 
 	}
 

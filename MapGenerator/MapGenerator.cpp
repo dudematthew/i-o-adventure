@@ -7,8 +7,22 @@ using namespace std;
 
 int main()
 {
-	MapGenerator generator(12);
-	generator.GenerateMap();
+	setlocale(LC_ALL, "pl_PL");
 
-	cout << generator.PreviewMap();
+	bool stop = false;
+	string answer;
+
+	while (!stop) {
+		MapGenerator generator(12);
+		generator.GenerateMap();
+
+		cout << generator.PreviewMap();
+
+		cout << "Kontynuować? t / *";
+		cin >> answer;
+
+		if (answer != "t")
+			stop = true;
+	}
+	
 }

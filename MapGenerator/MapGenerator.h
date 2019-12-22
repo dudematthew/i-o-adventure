@@ -1,6 +1,14 @@
 #include <vector>
 #include <string>
+#include <math.h>
 using namespace std;
+
+class RandomPoint {
+public:
+	int x;
+	int y;
+	int roomSize;
+};
 
 	/*
 	* Class that generates array, that represents
@@ -15,14 +23,17 @@ using namespace std;
 	class MapGenerator {
 	public:
 		int mapSize;
-		vector <vector <vector <int>>> generatedMap;
 
 		MapGenerator(int size);
 		void GenerateMap();
 		string PreviewMap();
-		int lastGeneratedMapSize();
+		int getGeneratedMapSize();
+		vector <vector <vector <int>>> getGeneratedMap();
+		vector <RandomPoint> getRandomPoints();
 	private:
-		int _lastGeneratedMapSize;
+		int _generatedMapSize;
+		vector <vector <vector <int>>> _generatedMap;
+		vector <RandomPoint> _randomPoints;
 	};
 
 	/*
@@ -31,7 +42,7 @@ using namespace std;
 	*/
 	MapGenerator::MapGenerator(int size = 10) {
 		this->mapSize = size;
-		this->_lastGeneratedMapSize = 0;
+		this->_generatedMapSize = 0;
 	}
 
 	/*
@@ -39,7 +50,7 @@ using namespace std;
 	* returns string representation of generated map
 	*/
 	string MapGenerator::PreviewMap() {
-		auto generatedMap = this->generatedMap;
+		auto generatedMap = this->_generatedMap;
 
 		string output;
 
@@ -64,8 +75,22 @@ using namespace std;
 		return output;
 	}
 
-	int MapGenerator::lastGeneratedMapSize() {
-		return this->_lastGeneratedMapSize;
+	/*
+	* Returns last generated map size
+	*/
+	int MapGenerator::getGeneratedMapSize() {
+		return this->_generatedMapSize;
+	}
+
+	vector <RandomPoint> MapGenerator::getRandomPoints() {
+		return this->_randomPoints;
+	}
+
+	/*
+	* Returns last generated map
+	*/
+	vector <vector <vector <int>>> MapGenerator::getGeneratedMap() {
+		return this->_generatedMap;
 	}
 
 	/*
@@ -74,7 +99,7 @@ using namespace std;
 	*/
 	void MapGenerator::GenerateMap () {
 		int mapSize = this->mapSize;
-		vector <vector <vector <int>>> x;
+		vector <vector <vector <int>>> generatedMap;
 
 		for (int i = 0; i < mapSize; i++) {
 			vector <vector <int>> y;
@@ -85,10 +110,31 @@ using namespace std;
 
 				y.push_back(z);
 			}
-			x.push_back(y);
+			generatedMap.push_back(y);
 		}
 
-		this->_lastGeneratedMapSize = mapSize;
-		this->generatedMap = x;
+		// Calculate the amount of random points
+		int randomPointsAmount = (int)floor(sqrt(mapSize));
+
+		vector <RandomPoint> randomPoints;
+
+		// Generate random points coordinates,
+		// save them to randomPoints and put
+		// them on the map
+		for (int i = 0; i < randomPointsAmount; i++) {
+			RandomPoint randomPoint;
+
+			randomPoint.x = rand() % mapSize;
+			randomPoint.y = rand() % mapSize;
+			randomPoint.roomSize = rand() % (int)floor(mapSize / 2);
+
+			randomPoints.push_back(randomPoint);
+		}
+
+
+
+		this->_randomPoints = randomPoints;
+		this->_generatedMapSize = mapSize;
+		this->_generatedMap = generatedMap;
 	}
 

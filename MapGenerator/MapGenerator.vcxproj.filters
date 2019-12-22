@@ -13,13 +13,16 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\MapGenerator">
+      <UniqueIdentifier>{89a52bda-13a4-4078-b0e5-d04c1d54d2ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="MapGenerator.h">
-      <Filter>Pliki nagłówkowe</Filter>
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -28,6 +31,21 @@
     </ClCompile>
     <ClCompile Include="MapGenerator.cpp">
       <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Constructor.cpp">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="GenerateMap.cpp">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="PreviewMap.cpp">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomPoint.h">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="GetFunctions.cpp">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

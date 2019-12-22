@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "MapGenerator.h"
+#include <iostream>
+using namespace std; // DANGER 
 
 /*
 * Generates by random a map, and saves it to
@@ -10,11 +12,14 @@ void MapGenerator::GenerateMap() {
 	vector <vector <vector <int>>> generatedMap;
 	vector <RandomPoint> randomPoints;
 
+	int EmptyPlaceId = 1;
+	int FilledPlaceId = 0;
+
 	for (int i = 0; i < mapSize; i++) {
 		vector <vector <int>> x;
 		for (int j = 0; j < mapSize; j++) {
 			vector <int> z;
-			z.push_back(0);
+			z.push_back(FilledPlaceId);
 			z.push_back(-1);
 
 			x.push_back(z);
@@ -47,7 +52,7 @@ void MapGenerator::GenerateMap() {
 		int currentRoomSize = currentRandomPoint.roomSize;
 		int yPointer, xPointer;
 
-		generatedMap[y][x][0] = 1;
+		generatedMap[y][x][0] = EmptyPlaceId;
 
 		yPointer = y;
 		// Go up and right
@@ -56,14 +61,14 @@ void MapGenerator::GenerateMap() {
 			if (yPointer > 1)
 				yPointer--;
 
-			generatedMap[yPointer][x][0] = 1;
+			generatedMap[yPointer][x][0] = EmptyPlaceId;
 			xPointer = x;
 			for (int k = 0; k < currentRoomSize - 1; k++)
 			{
 				if (xPointer < mapSize - 2)
 					xPointer++;
 
-				generatedMap[yPointer][xPointer][0] = 1;
+				generatedMap[yPointer][xPointer][0] = EmptyPlaceId;
 			}
 		}
 
@@ -74,14 +79,14 @@ void MapGenerator::GenerateMap() {
 			if (xPointer < mapSize - 2)
 				xPointer++;
 
-			generatedMap[y][xPointer][0] = 1;
+			generatedMap[y][xPointer][0] = EmptyPlaceId;
 			yPointer = y;
 			for (int k = 0; k < currentRoomSize - 1; k++)
 			{
 				if (yPointer < mapSize - 2)
 					yPointer++;
 
-				generatedMap[yPointer][xPointer][0] = 1;
+				generatedMap[yPointer][xPointer][0] = EmptyPlaceId;
 			}
 		}
 
@@ -92,14 +97,14 @@ void MapGenerator::GenerateMap() {
 			if (yPointer < mapSize - 2)
 				yPointer++;
 
-			generatedMap[yPointer][x][0] = 1;
+			generatedMap[yPointer][x][0] = EmptyPlaceId;
 			xPointer = x;
 			for (int k = 0; k < currentRoomSize - 1; k++)
 			{
 				if (xPointer > 1)
 					xPointer--;
 
-				generatedMap[yPointer][xPointer][0] = 1;
+				generatedMap[yPointer][xPointer][0] = EmptyPlaceId;
 			}
 		}
 
@@ -110,19 +115,50 @@ void MapGenerator::GenerateMap() {
 			if (xPointer > 1)
 				xPointer--;
 
-			generatedMap[y][xPointer][0] = 1;
+			generatedMap[y][xPointer][0] = EmptyPlaceId;
 			yPointer = y;
 			for (int k = 0; k < currentRoomSize - 1; k++)
 			{
 				if (yPointer > 1)
 					yPointer--;
 
-				generatedMap[yPointer][xPointer][0] = 1;
+				generatedMap[yPointer][xPointer][0] = EmptyPlaceId;
 			}
 		}
 
+		// Generates x-path to next point
+		if (randomPoints.size() > i + 1) {
+			xPointer = x;
+			yPointer = y;
+			int nextX = randomPoints[i + 1].x;
+			int nextY = randomPoints[i + 1].y;
 
+			while (xPointer != nextX) {
 
+				cout << endl << "xPointer: " << xPointer << " nextX: " << nextX << endl;
+
+				if (xPointer > nextX)
+					xPointer--;
+
+				else if (xPointer < nextX)
+					xPointer++;
+
+				generatedMap[yPointer][xPointer][0] = EmptyPlaceId;
+			}
+
+			while (yPointer != nextY) {
+
+				cout << endl << "yPointer: " << yPointer << " nextY: " << nextY << endl;
+
+				if (yPointer > nextY)
+					yPointer--;
+
+				else if (yPointer < nextY)
+					yPointer++;
+
+				generatedMap[yPointer][xPointer][0] = EmptyPlaceId;
+			}
+		}	
 	}
 
 

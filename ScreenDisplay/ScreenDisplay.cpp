@@ -1,64 +1,77 @@
-﻿#include <Windows.h>
+﻿#include "ScreenDisplay.h"
 #include <iostream>
 
-#define PERR(bSuccess, api){if(!(bSuccess)) printf("%s:Error %d from %s \ on line% d\n", __FILE__, GetLastError(), api, __LINE__);}
-
-#pragma main functions
-
-void SetScreenTitle() {
-	BOOL bSuccess;
-	HANDLE hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE); //grabbing the output console handle
-	bSuccess = SetConsoleTitle(TEXT("I/O Adventure")); // setting the Console Window Title to "I/O Adventure"
-	PERR(bSuccess, "SetConsoleTitle"); //checking if the title was changed with a success
-	return;
+void ScreenDisplay::setScreenTitle() 
+{
+	SetConsoleTitle(TEXT("I/O Adventure"));
 }
 
-void SetScreenFont() {
-	/*
-	***************
-	***
-	***	Left for future expansion
-	***
-	***************
-	*/
-	return;
+void ScreenDisplay::setScreenFont(int size)
+{
+	CONSOLE_FONT_INFOEX cfi;
+	cfi.cbSize = sizeof cfi;
+	cfi.nFont = 0;
+	cfi.dwFontSize.X = 0;
+	cfi.dwFontSize.Y = size;
+	cfi.FontFamily = FF_DONTCARE;
+	cfi.FontWeight = FW_NORMAL;
+	wcscpy_s(cfi.FaceName, L"Lucida Console");
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &cfi);
 }
 
-void SetScreenSize() {
+int ScreenDisplay::getScreenWidth() {
+	CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
+	if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbiInfo))
+		return csbiInfo.dwSize.X;
+	else
+		return NULL;
+}
+
+void ScreenDisplay::setScreenSize(int width, int height)
+{
 	
-	BOOL bSuccess; // this bool
-	HANDLE hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE); //grabbing the output console handle
-	COORD mSize = GetLargestConsoleWindowSize(hConsoleOutput); //getting the largest console size for current display
+	HANDLE hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD mSize;
+	_COORD coord;
+	mSize = GetLargestConsoleWindowSize(hConsoleOutput); 
 
-	_COORD coord; //creating new coord holding the max size, from mSize, for the size of the buffor
-	coord.X = mSize.X;
-	coord.Y = mSize.Y;
+	if (width == NULL || width > mSize.X)
+		coord.X = mSize.X;
+	else
+		coord.X = mSize.X = width;
 
-	_SMALL_RECT Rect; //creating the small_rect starting from 0,0 (top left) and ending on the top right of the screen (mSize.X, mSize.Y)
+	if (height == NULL || height > mSize.Y)
+		coord.Y = mSize.Y;
+	else
+		coord.Y = mSize.Y = height;
+
+	_SMALL_RECT Rect;
 	Rect.Top = 0; 
 	Rect.Left = 0;
 	Rect.Bottom = mSize.Y - 1;
 	Rect.Right = mSize.X - 1;
 
-	bSuccess = SetConsoleScreenBufferSize(hConsoleOutput, coord); //Setting the buffor size
-	PERR(bSuccess, "SetConsoleScreenBufferSize"); //checking if the bufforSize ended with a success
-
-	bSuccess = SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &Rect); //setting the window size
-	PERR(bSuccess, "SetConsoleWindowInfo"); //checking if the bufforSize ended with a success
-
-	return;
-}
-
-void SetScreen(bool size, bool font, bool title) {
-	if (size)SetScreenSize();
-	if (font)SetScreenFont();
-	if (title)SetScreenTitle();
-	return;
+	SetConsoleScreenBufferSize(hConsoleOutput, coord);
+	SetConsoleWindowInfo(hConsoleOutput, FALSE, &Rect);
 }
 
 int main()
 {
-	SetScreen(true, false, true);
+	ScreenDisplay b;
+	b.setScreenTitle();
+	do {
+		int f, w, h;
+		char c;
+		std::cin >> f;
+		b.setScreenFont(f);
+		std::cin >> w >> h;
+		b.setScreenSize(w, h);
+		std::cout << "Stop [t]\n> ";
+		std::cin >> c;
+		if (c == 't')
+			break;
 
+
+	} while (true);
 	return 0;
 }

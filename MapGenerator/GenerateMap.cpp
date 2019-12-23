@@ -55,7 +55,7 @@ void MapGenerator::GenerateMap() {
 		generatedMap[y][x][0] = EmptyPlaceId;
 
 		yPointer = y;
-		// Go up and right
+		// Clear up and right
 		for (int j = 0; j < currentRoomSize - 1; j++) {
 
 			if (yPointer > 1)
@@ -73,7 +73,7 @@ void MapGenerator::GenerateMap() {
 		}
 
 		xPointer = x;
-		// Go right and down
+		// Clear right and down
 		for (int j = 0; j < currentRoomSize - 1; j++) {
 
 			if (xPointer < mapSize - 2)
@@ -91,7 +91,7 @@ void MapGenerator::GenerateMap() {
 		}
 
 		yPointer = y;
-		// Go down and left
+		// Clear down and left
 		for (int j = 0; j < currentRoomSize - 1; j++) {
 
 			if (yPointer < mapSize - 2)
@@ -109,7 +109,7 @@ void MapGenerator::GenerateMap() {
 		}
 
 		xPointer = x;
-		// Go left and up
+		// Clear left and up
 		for (int j = 0; j < currentRoomSize - 1; j++) {
 
 			if (xPointer > 1)
@@ -126,16 +126,17 @@ void MapGenerator::GenerateMap() {
 			}
 		}
 
-		// Generates x-path to next point
+		// Generates path to next random 
+		// point
 		if (randomPoints.size() > i + 1) {
 			xPointer = x;
 			yPointer = y;
 			int nextX = randomPoints[i + 1].x;
 			int nextY = randomPoints[i + 1].y;
 
+			// Generate x-path to next random
+			// point
 			while (xPointer != nextX) {
-
-				cout << endl << "xPointer: " << xPointer << " nextX: " << nextX << endl;
 
 				if (xPointer > nextX)
 					xPointer--;
@@ -146,9 +147,9 @@ void MapGenerator::GenerateMap() {
 				generatedMap[yPointer][xPointer][0] = EmptyPlaceId;
 			}
 
+			// Generate y-path to next random
+			// point
 			while (yPointer != nextY) {
-
-				cout << endl << "yPointer: " << yPointer << " nextY: " << nextY << endl;
 
 				if (yPointer > nextY)
 					yPointer--;
@@ -159,9 +160,29 @@ void MapGenerator::GenerateMap() {
 				generatedMap[yPointer][xPointer][0] = EmptyPlaceId;
 			}
 		}	
+
+		yPointer = y;
+		// Generate enter path
+		if (i == 0) {
+			while (yPointer != 0) {
+				
+				yPointer--;
+
+				generatedMap[yPointer][x][0] = EmptyPlaceId;
+			}
+		}
+
+		yPointer = y;
+		// Generate exit path
+		if (i == randomPoints.size() - 1) {
+			while (yPointer != mapSize - 1) {
+				
+				yPointer++;
+
+				generatedMap[yPointer][x][0] = EmptyPlaceId;
+			}
+		}
 	}
-
-
 
 	this->_randomPoints = randomPoints;
 	this->_generatedMapSize = mapSize;

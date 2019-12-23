@@ -29,7 +29,6 @@ int ScreenDisplay::getScreenWidth() {
 
 void ScreenDisplay::setScreenSize(int width, int height)
 {
-	
 	HANDLE hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD mSize;
 	_COORD coord;
@@ -57,21 +56,5 @@ void ScreenDisplay::setScreenSize(int width, int height)
 
 int main()
 {
-	ScreenDisplay b;
-	b.setScreenTitle();
-	do {
-		int f, w, h;
-		char c;
-		std::cin >> f;
-		b.setScreenFont(f);
-		std::cin >> w >> h;
-		b.setScreenSize(w, h);
-		std::cout << "Stop [t]\n> ";
-		std::cin >> c;
-		if (c == 't')
-			break;
-
-
-	} while (true);
 	return 0;
 }

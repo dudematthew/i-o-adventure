@@ -5,7 +5,7 @@ using namespace std; // DANGER
 
 /*
 * Generates by random a map, and saves it to
-* generatedMap class variable
+* generatedMap class member
 */
 void MapGenerator::GenerateMap() {
 	int mapSize = this->mapSize;

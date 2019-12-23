@@ -12,7 +12,7 @@ using namespace std;
 	* the structure of the map based on parameters
 	* structure format is [y][x][z], where z is
 	* in range from 0 to 1
-	* to generate map set mapSize member value, then
+	* To generate map set mapSize member value, then
 	* use generateMap method to generate
 	* Access generated map by public member
 	* generatedMap

@@ -21,13 +21,14 @@ using namespace std;
 	public:
 		int mapSize;
 
-		MapGenerator(int size);
 		void GenerateMap();
 		string PreviewMap(bool showTop);
 		int GetGeneratedMapSize();
 		vector <vector <vector <int>>> getGeneratedMap();
 		vector <RandomPoint> getRandomPoints();
+
 	private:
+		MapGenerator(int size);
 		int _generatedMapSize;
 		vector <vector <vector <int>>> _generatedMap;
 		vector <RandomPoint> _randomPoints;

@@ -13,7 +13,7 @@ int main()
 	string answer;
 
 	while (!stop) {
-		MapGenerator generator(24);
+		MapGenerator generator(24, 24);
 		generator.GenerateMap();
 
 		cout << generator.PreviewMap(0);

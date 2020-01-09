@@ -2,10 +2,10 @@
 #include "MapGenerator.h"
 
 /*
-* Preview generated map
-* returns string representation of generated map
+	Preview generated map
+	returns string representation of generated map
 */
-string MapGenerator::PreviewMap(bool showTop = 1) {
+string MapGenerator::PreviewMap(bool showTop = true) {
 	auto generatedMap = this->_generatedMap;
 
 	string output;

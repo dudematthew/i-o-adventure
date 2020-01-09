@@ -4,20 +4,21 @@
 using namespace std; // DANGER 
 
 /*
-* Generates by random a map, and saves it to
-* generatedMap class member
+	Generates by random a map, and saves it to
+	generatedMap class member
 */
 void MapGenerator::GenerateMap() {
-	int mapSize = this->mapSize;
+	int mapSizeX = this->mapSizeX;
+	int mapSizeY = this->mapSizeY;
 	vector <vector <vector <int>>> generatedMap;
 	vector <RandomPoint> randomPoints;
 
 	int EmptyPlaceId = 1;
 	int FilledPlaceId = 0;
 
-	for (int i = 0; i < mapSize; i++) {
+	for (int i = 0; i < mapSizeY; i++) {
 		vector <vector <int>> x;
-		for (int j = 0; j < mapSize; j++) {
+		for (int j = 0; j < mapSizeX; j++) {
 			vector <int> z;
 			z.push_back(FilledPlaceId);
 			z.push_back(-1);
@@ -28,17 +29,18 @@ void MapGenerator::GenerateMap() {
 	}
 
 	// Calculate the amount of random points
-	int randomPointsAmount = (int)floor(sqrt(mapSize));
+	int randomPointsAmount = (int)floor(sqrt((mapSizeX + mapSizeY) / 2));
 
 	// Generate random points coordinates and
 	// save them to randomPoints 
 	for (int i = 0; i < randomPointsAmount; i++) {
 		RandomPoint randomPoint;
 
-		randomPoint.x = (rand() % (mapSize - 2)) + 1;
-		randomPoint.y = (rand() % (mapSize - 2)) + 1;
+		randomPoint.x = (rand() % (mapSizeX - 2)) + 1;
+		randomPoint.y = (rand() % (mapSizeY - 2)) + 1;
 
-		randomPoint.roomSize = rand() % ((int)floor(mapSize / 2));
+		randomPoint.roomSizeY = rand() % ((int)floor(mapSizeY / 2));
+		randomPoint.roomSizeX = rand() % ((int)floor(mapSizeX / 2));
 
 		randomPoints.push_back(randomPoint);
 	}
@@ -49,23 +51,24 @@ void MapGenerator::GenerateMap() {
 		RandomPoint currentRandomPoint = randomPoints[i];
 		int x = currentRandomPoint.x;
 		int y = currentRandomPoint.y;
-		int currentRoomSize = currentRandomPoint.roomSize;
+		int currentRoomSizeY = currentRandomPoint.roomSizeY;
+		int currentRoomSizeX = currentRandomPoint.roomSizeX;
 		int yPointer, xPointer;
 
 		generatedMap[y][x][0] = EmptyPlaceId;
 
 		yPointer = y;
 		// Clear up and right
-		for (int j = 0; j < currentRoomSize - 1; j++) {
+		for (int j = 0; j < currentRoomSizeY - 1; j++) {
 
 			if (yPointer > 1)
 				yPointer--;
 
 			generatedMap[yPointer][x][0] = EmptyPlaceId;
 			xPointer = x;
-			for (int k = 0; k < currentRoomSize - 1; k++)
+			for (int k = 0; k < currentRoomSizeX - 1; k++)
 			{
-				if (xPointer < mapSize - 2)
+				if (xPointer < mapSizeX - 2)
 					xPointer++;
 
 				generatedMap[yPointer][xPointer][0] = EmptyPlaceId;
@@ -74,16 +77,16 @@ void MapGenerator::GenerateMap() {
 
 		xPointer = x;
 		// Clear right and down
-		for (int j = 0; j < currentRoomSize - 1; j++) {
+		for (int j = 0; j < currentRoomSizeX - 1; j++) {
 
-			if (xPointer < mapSize - 2)
+			if (xPointer < mapSizeX - 2)
 				xPointer++;
 
 			generatedMap[y][xPointer][0] = EmptyPlaceId;
 			yPointer = y;
-			for (int k = 0; k < currentRoomSize - 1; k++)
+			for (int k = 0; k < currentRoomSizeY - 1; k++)
 			{
-				if (yPointer < mapSize - 2)
+				if (yPointer < mapSizeY - 2)
 					yPointer++;
 
 				generatedMap[yPointer][xPointer][0] = EmptyPlaceId;
@@ -92,14 +95,14 @@ void MapGenerator::GenerateMap() {
 
 		yPointer = y;
 		// Clear down and left
-		for (int j = 0; j < currentRoomSize - 1; j++) {
+		for (int j = 0; j < currentRoomSizeY - 1; j++) {
 
-			if (yPointer < mapSize - 2)
+			if (yPointer < mapSizeY - 2)
 				yPointer++;
 
 			generatedMap[yPointer][x][0] = EmptyPlaceId;
 			xPointer = x;
-			for (int k = 0; k < currentRoomSize - 1; k++)
+			for (int k = 0; k < currentRoomSizeX - 1; k++)
 			{
 				if (xPointer > 1)
 					xPointer--;
@@ -110,14 +113,14 @@ void MapGenerator::GenerateMap() {
 
 		xPointer = x;
 		// Clear left and up
-		for (int j = 0; j < currentRoomSize - 1; j++) {
+		for (int j = 0; j < currentRoomSizeX - 1; j++) {
 
 			if (xPointer > 1)
 				xPointer--;
 
 			generatedMap[y][xPointer][0] = EmptyPlaceId;
 			yPointer = y;
-			for (int k = 0; k < currentRoomSize - 1; k++)
+			for (int k = 0; k < currentRoomSizeY - 1; k++)
 			{
 				if (yPointer > 1)
 					yPointer--;
@@ -175,7 +178,7 @@ void MapGenerator::GenerateMap() {
 		yPointer = y;
 		// Generate exit path
 		if (i == randomPoints.size() - 1) {
-			while (yPointer != mapSize - 1) {
+			while (yPointer != mapSizeY - 1) {
 				
 				yPointer++;
 
@@ -185,6 +188,7 @@ void MapGenerator::GenerateMap() {
 	}
 
 	this->_randomPoints = randomPoints;
-	this->_generatedMapSize = mapSize;
+	this->_generatedMapSizeY = mapSizeY;
+	this->_generatedMapSizeX = mapSizeX;
 	this->_generatedMap = generatedMap;
 }

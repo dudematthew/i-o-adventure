@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "MapGenerator.h"
 #include <iostream>
+#include <ctime>
 using namespace std; // DANGER 
 
 /*
@@ -8,6 +9,7 @@ using namespace std; // DANGER
 	generatedMap class member
 */
 void MapGenerator::GenerateMap() {
+	srand(time(NULL));
 	int mapSizeX = this->mapSizeX;
 	int mapSizeY = this->mapSizeY;
 	vector <vector <vector <int>>> generatedMap;

@@ -13,7 +13,7 @@ public:
 	MapData();
 private:
 	vector <vector <vector <int>>> _mapBase;
-	MapEntity _MapEntities;
+	vector <MapEntity> _MapEntities;
 };
 
 

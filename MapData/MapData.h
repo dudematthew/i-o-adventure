@@ -1,5 +1,8 @@
 #pragma once
 #include <vector>
+#include <vector>
+
+using namespace std;
 
 class MapData
 {
@@ -10,7 +13,7 @@ public:
 private:
 
 	int siema;
-	vector _mapSkeleton;
+	vector <int> _mapSkeleton;
 
 };
 

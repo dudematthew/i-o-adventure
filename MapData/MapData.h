@@ -3,6 +3,8 @@ class MapData
 {
 public:
 	MapData();
-	~MapData();
+private:
+
 };
+
 

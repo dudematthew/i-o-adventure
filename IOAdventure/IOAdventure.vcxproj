@@ -162,6 +162,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MapData\MapData.vcxproj">
+      <Project>{0e85c189-0832-4362-97a1-3ab0a9e32343}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\MapGenerator\MapGenerator.vcxproj">
+      <Project>{f4b155a1-7b43-4cd6-a639-ada599166dc0}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

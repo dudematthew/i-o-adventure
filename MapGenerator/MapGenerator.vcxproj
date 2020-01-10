@@ -91,6 +91,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\Mateusz\source\repos\IOAdventure\MapData;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -167,6 +168,11 @@
     </ClCompile>
     <ClCompile Include="PreviewMap.cpp" />
     <ClCompile Include="RandomPoint.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MapData\MapData.vcxproj">
+      <Project>{0e85c189-0832-4362-97a1-3ab0a9e32343}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

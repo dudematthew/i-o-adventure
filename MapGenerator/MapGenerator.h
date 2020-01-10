@@ -3,6 +3,7 @@
 #include <string>
 #include <math.h>
 #include "RandomPoint.h"
+#include "MapData.h"
 
 using namespace std;
 

@@ -4,13 +4,5 @@
 
 int main()
 { 
-}
-
-MapData::MapData()
-{
-}
-
-
-MapData::~MapData()
-{
+	MapData data();
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Windows.h>
+#include <string>
 #include "pch.h"
 
 using namespace std;
@@ -8,9 +9,11 @@ using namespace std;
 class MapEntity
 {
 public:
+	unsigned short id;
 	COORD coordinates;
 	bool visible;
 	bool alive;
+	char symbol;
 
 	MapEntity(bool visible);
 	void DamageSelf(short value);

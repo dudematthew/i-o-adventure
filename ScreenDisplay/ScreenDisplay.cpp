@@ -1,4 +1,5 @@
 ﻿#include "ScreenDisplay.h"
+#include <iostream>
 
 void ScreenDisplay::setScreenTitle()
 {
@@ -22,6 +23,14 @@ int ScreenDisplay::getScreenWidth() {
 	CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
 	if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbiInfo))
 		return csbiInfo.dwSize.X;
+	else
+		return NULL;
+}
+
+int ScreenDisplay::getScreenHeight() {
+	CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
+	if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbiInfo))
+		return csbiInfo.dwSize.Y;
 	else
 		return NULL;
 }
@@ -53,7 +62,35 @@ void ScreenDisplay::setScreenSize(int width, int height)
 		SetConsoleWindowInfo(hConsoleOutput, FALSE, &Rect);
 }
 
+void ScreenDisplay::WriteToBuffor()
+{
+	ScreenDisplay buf;
+	int bufH = buf.getScreenHeight();
+	int bufW = buf.getScreenWidth();
+	int mS = 12;
+	int k = bufW;
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	unsigned char* data = new unsigned char[bufW * mS];
+
+	for (int i = 0; i < mS; i++) {
+
+		for (int j = 0; j < bufW / 2; j++)
+			data[j + (i * bufW)] = ' ';
+
+		for (int j = bufW / 2; j < (bufW / 2) + mS; j++)
+			data[j + (i * bufW)] = '#';
+
+		for (int j = (bufW / 2) + mS; j < bufW; j++)
+			data[j + (i * bufW)] = ' ';
+	}
+	WriteFile(handle, data, sizeof(char) * bufW * mS, NULL, NULL);
+}
+
 int main()
 {
+	ScreenDisplay b;
+	b.setScreenSize(NULL, NULL);
+	b.WriteToBuffor();
 	return 0;
 }

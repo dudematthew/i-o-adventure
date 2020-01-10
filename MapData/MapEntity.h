@@ -1,5 +1,7 @@
 #pragma once
-#include <windows.h>
+
+#include <Windows.h>
+#include "pch.h"
 
 using namespace std;
 

@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
-#include <vector>
+#include "MapEntity.h"
+
 
 using namespace std;
 
@@ -11,10 +12,8 @@ public:
 
 	MapData();
 private:
-
-	int siema;
-	vector <int> _mapSkeleton;
-
+	vector <vector <vector <int>>> _mapBase;
+	MapEntity _MapEntities;
 };
 
 

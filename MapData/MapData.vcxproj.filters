@@ -16,6 +16,12 @@
     <Filter Include="Pliki nagłówkowe\MapData">
       <UniqueIdentifier>{c2f69510-8f17-4430-89bd-66d3eebb406c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\MapData\Subclasses">
+      <UniqueIdentifier>{7507f724-aeb1-4a22-af22-e3a2e05baa19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\MapEntity">
+      <UniqueIdentifier>{38bce9e9-e754-46e0-8179-03dd2cb9e87c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -23,6 +29,9 @@
     </ClInclude>
     <ClInclude Include="MapData.h">
       <Filter>Pliki nagłówkowe\MapData</Filter>
+    </ClInclude>
+    <ClInclude Include="MapEntity.h">
+      <Filter>Pliki nagłówkowe\MapEntity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

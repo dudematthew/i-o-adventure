@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="MapData.h" />
+    <ClInclude Include="MapEntity.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>

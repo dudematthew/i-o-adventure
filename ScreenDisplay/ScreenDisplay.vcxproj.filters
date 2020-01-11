@@ -13,15 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\ScreenDisplay">
+      <UniqueIdentifier>{345313d2-e7c0-4e1d-8dc5-4394d733aa37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ScreenDisplay.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="ScreenDisplay_DisplayThroughBuffor.cpp">
+      <Filter>Pliki nagłówkowe\ScreenDisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenDisplay_getScreenHeight.cpp">
+      <Filter>Pliki nagłówkowe\ScreenDisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenDisplay_getScreenWidth.cpp">
+      <Filter>Pliki nagłówkowe\ScreenDisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenDisplay_setScreenSize.cpp">
+      <Filter>Pliki nagłówkowe\ScreenDisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenDisplay_setScreenFont.cpp">
+      <Filter>Pliki nagłówkowe\ScreenDisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenDisplay_setScreenTitle.cpp">
+      <Filter>Pliki nagłówkowe\ScreenDisplay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ScreenDisplay.h">
-      <Filter>Pliki nagłówkowe</Filter>
+      <Filter>Pliki nagłówkowe\ScreenDisplay</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

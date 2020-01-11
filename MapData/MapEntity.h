@@ -9,38 +9,23 @@ using namespace std;
 class MapEntity
 {
 public:
-	unsigned short id;
-	COORD coordinates;
-	bool visible;
-	bool alive;
-	char symbol;
-
-	MapEntity(bool visible);
+	MapEntity(short id);
 	void DamageSelf(short value);
-	void SetHP(short value);
-	string type;
+	void SetHp(short value);
+	short GetHp();
+	void SetChar(char symbol);
+	void SetCoordinates(COORD coordinates);
+	void SetType(string type);
+	void SetVisibility(bool visible);
 
 private:
+	void SetAliveState(bool alive);
 
+	COORD coordinates;
+	unsigned short id;
+	bool alive;
 	short hp;
+	bool visible;
+	char symbol;
+	string type;
 };
-
-MapEntity::MapEntity(bool visible = true) {
-	if (visible)
-		this->visible = true;
-	else
-		this->visible = false;
-
-
-}
-
-/*
-	
-*/
-void MapEntity::DamageSelf(short value) {
-
-}
-
-void MapEntity::SetHP(short value) {
-
-}

@@ -4,6 +4,9 @@
 
 using namespace std;
 
+/*
+	Description comment
+*/
 class MapData
 {
 public:

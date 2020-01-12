@@ -6,5 +6,5 @@
 */
 inline void MapEntity::SetCoordinates(COORD coordinates)
 {
-	this->coordinates = coordinates;
+	this->_coordinates = coordinates;
 }

@@ -80,6 +80,9 @@
     <ClCompile Include="MapEntity_SetVisibility.cpp">
       <Filter>Pliki nagłówkowe\MapEntity</Filter>
     </ClCompile>
+    <ClCompile Include="MapData_SetTheme.cpp">
+      <Filter>Pliki nagłówkowe\MapData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MapData.rc">

@@ -6,5 +6,5 @@
 */
 inline void MapEntity::SetVisibility(bool visible)
 {
-	this->visible = visible;
+	this->_visible = visible;
 }

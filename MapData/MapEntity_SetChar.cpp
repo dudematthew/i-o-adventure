@@ -5,5 +5,5 @@
 */
 inline void MapEntity::SetChar(char symbol)
 {
-	this->symbol = symbol;
+	this->_symbol = symbol;
 }

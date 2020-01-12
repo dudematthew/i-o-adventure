@@ -160,6 +160,7 @@
     <ClCompile Include="MapData_AddMapEntity.cpp" />
     <ClCompile Include="MapData_MapData.cpp" />
     <ClCompile Include="MapData.cpp" />
+    <ClCompile Include="MapData_SetTheme.cpp" />
     <ClCompile Include="MapEntity_DamageSelf.cpp" />
     <ClCompile Include="MapEntity_GetHp.cpp" />
     <ClCompile Include="MapEntity_SetAliveState.cpp" />

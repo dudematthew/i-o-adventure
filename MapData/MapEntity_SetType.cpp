@@ -7,5 +7,5 @@
 */
 inline void MapEntity::SetType(string type)
 {
-	this->type = type;
+	this->_type = type;
 }

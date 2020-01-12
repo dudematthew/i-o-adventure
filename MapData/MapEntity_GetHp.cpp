@@ -5,5 +5,5 @@
 */
 inline short MapEntity::GetHp()
 {
-	return this->hp;
+	return this->_hp;
 }

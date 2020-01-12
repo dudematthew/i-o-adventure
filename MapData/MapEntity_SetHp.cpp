@@ -5,14 +5,14 @@
 	short value: value to set
 */
 void MapEntity::SetHp(short value) {
-	this->hp = value;
+	this->_hp = value;
 
-	if (this->hp <= 0) {
-		this->hp = 0;
-		SetAliveState(false);
+	if (this->_hp <= 0) {
+		this->_hp = 0;
+		_SetAliveState(false);
 	}
 
-	if (this->hp > 0) {
-		SetAliveState(true);
+	if (this->_hp > 0) {
+		_SetAliveState(true);
 	}
 }

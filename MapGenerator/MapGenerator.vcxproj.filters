@@ -35,20 +35,20 @@
     <ClCompile Include="MapGenerator.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="Constructor.cpp">
-      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
-    </ClCompile>
-    <ClCompile Include="GenerateMap.cpp">
-      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
-    </ClCompile>
-    <ClCompile Include="PreviewMap.cpp">
-      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
-    </ClCompile>
-    <ClCompile Include="GetFunctions.cpp">
-      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
-    </ClCompile>
     <ClCompile Include="RandomPoint.h">
       <Filter>Pliki nagłówkowe\MapGenerator\Subclasses</Filter>
+    </ClCompile>
+    <ClCompile Include="MapGenerator_PreviewMap.cpp">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="MapGenerator_GetFunctions.cpp">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="MapGenerator_GenerateMap.cpp">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="MapGenerator_MapGenerator.cpp">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

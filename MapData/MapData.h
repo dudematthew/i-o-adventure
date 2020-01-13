@@ -1,4 +1,5 @@
 #pragma once
+#include "pch.h"
 #include <vector>
 #include <string>
 #include "MapEntity.h"
@@ -16,12 +17,14 @@ using namespace std;
 class MapData
 {
 public:
-	MapData();
+	MapData(short id);
 	void SetMapBase(vector <vector <vector <int>>> mapBase);
 	void SetMapEntites(vector <MapEntity> MapEntities);
 	void AddMapEntity(MapEntity entity);
 	void SetTheme(string theme);
+
 private:
+	short _id;
 	string _theme;
 	vector <vector <vector <int>>> _mapBase;
 	vector <MapEntity> _MapEntities;

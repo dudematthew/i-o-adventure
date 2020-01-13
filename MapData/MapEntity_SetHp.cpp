@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "MapEntity.h"
 
 /*
@@ -9,10 +10,10 @@ void MapEntity::SetHp(short value) {
 
 	if (this->_hp <= 0) {
 		this->_hp = 0;
-		_SetAliveState(false);
+		this->_SetAliveState(false);
 	}
 
 	if (this->_hp > 0) {
-		_SetAliveState(true);
+		this->_SetAliveState(true);
 	}
 }

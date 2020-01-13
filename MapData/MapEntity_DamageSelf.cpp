@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "MapEntity.h"
 
 /*
@@ -9,6 +10,6 @@ void MapEntity::DamageSelf(short value) {
 
 	if (this->_hp <= 0) {
 		this->_hp = 0;
-		_SetAliveState(false);
+		this->_SetAliveState(false);
 	}
 }

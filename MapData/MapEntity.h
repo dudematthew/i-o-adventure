@@ -1,8 +1,8 @@
 #pragma once
 
+#include "pch.h"
 #include <Windows.h>
 #include <string>
-#include "pch.h"
 
 using namespace std;
 
@@ -21,6 +21,7 @@ public:
 	void SetCoordinates(COORD coordinates);
 	void SetType(string type);
 	void SetVisibility(bool visible);
+
 
 private:
 	void _SetAliveState(bool alive);

@@ -16,5 +16,7 @@ int main()
 
 	MapEntity inputEntity = mapEntities[0];
 
+	inputEntity.SetHp(12);
+
 	cout << inputEntity.GetHp();
 }

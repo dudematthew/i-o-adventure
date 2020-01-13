@@ -6,7 +6,7 @@
 	List of entity types can be found in documentation
 	string type: type to set
 */
-inline void MapEntity::SetType(string type)
+void MapEntity::SetType(string type)
 {
 	this->_type = type;
 }

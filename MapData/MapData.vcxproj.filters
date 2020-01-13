@@ -83,6 +83,12 @@
     <ClCompile Include="MapData_SetTheme.cpp">
       <Filter>Pliki nagłówkowe\MapData</Filter>
     </ClCompile>
+    <ClCompile Include="MapData_GetMapBase.cpp">
+      <Filter>Pliki nagłówkowe\MapData</Filter>
+    </ClCompile>
+    <ClCompile Include="MapData_GetMapEntites.cpp">
+      <Filter>Pliki nagłówkowe\MapData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MapData.rc">

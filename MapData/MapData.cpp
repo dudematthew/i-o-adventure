@@ -6,5 +6,15 @@ using namespace std;
 
 int main()
 { 
-	cout << "siema";
+	MapData data(12);
+
+	MapEntity entity(12);
+
+	data.AddMapEntity(entity);
+
+	vector <MapEntity> mapEntities = data.GetMapEntities();
+
+	MapEntity inputEntity = mapEntities[0];
+
+	cout << inputEntity.GetHp();
 }

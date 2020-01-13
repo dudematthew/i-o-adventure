@@ -22,6 +22,8 @@ public:
 	void SetMapEntites(vector <MapEntity> MapEntities);
 	void AddMapEntity(MapEntity entity);
 	void SetTheme(string theme);
+	vector <vector <vector <int>>> GetMapBase();
+	vector <MapEntity> GetMapEntities();
 
 private:
 	short _id;

@@ -89,6 +89,9 @@
     <ClCompile Include="MapData_GetMapEntites.cpp">
       <Filter>Pliki nagłówkowe\MapData</Filter>
     </ClCompile>
+    <ClCompile Include="MapEntity_GetId.cpp">
+      <Filter>Pliki nagłówkowe\MapEntity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MapData.rc">

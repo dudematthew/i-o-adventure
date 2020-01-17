@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "MapEntity.h"
 
 /*
@@ -6,5 +7,5 @@
 	bool visible: sets entity visibility
 */
 MapEntity::MapEntity(short id = 0) {
-	this->id = id;
+	this->_id = id;
 }

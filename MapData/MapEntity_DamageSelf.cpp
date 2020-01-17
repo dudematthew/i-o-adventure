@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "MapEntity.h"
 
 /*
@@ -5,10 +6,10 @@
 	short value: value to substract
 */
 void MapEntity::DamageSelf(short value) {
-	this->hp -= value;
+	this->_hp -= value;
 
-	if (this->hp <= 0) {
-		this->hp = 0;
-		SetAliveState(false);
+	if (this->_hp <= 0) {
+		this->_hp = 0;
+		this->_SetAliveState(false);
 	}
 }

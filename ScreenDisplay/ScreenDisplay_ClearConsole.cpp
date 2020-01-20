@@ -16,6 +16,5 @@ void ScreenDisplay::ClearConsole()
 	FillConsoleOutputAttribute(hConsole,csbi .wAttributes,dwConSize, coordScreen, &cCharsWritten);
 
 	SetConsoleCursorPosition(hConsole, coordScreen);
-
 	return;
 }

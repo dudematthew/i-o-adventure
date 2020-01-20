@@ -1,6 +1,4 @@
 ﻿#include "ScreenDisplay.h"
-#include <iostream>
-#include <conio.h>
 
 int main()
 {

@@ -152,10 +152,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ScreenDisplay_ClearConsole.cpp" />
     <ClCompile Include="ScreenDisplay_DisplayThroughBuffor.cpp" />
     <ClCompile Include="ScreenDisplay.cpp" />
     <ClCompile Include="ScreenDisplay_getScreenHeight.cpp" />
     <ClCompile Include="ScreenDisplay_getScreenWidth.cpp" />
+    <ClCompile Include="ScreenDisplay_PreviewDisplay.cpp" />
     <ClCompile Include="ScreenDisplay_setScreenFont.cpp" />
     <ClCompile Include="ScreenDisplay_setScreenSize.cpp" />
     <ClCompile Include="ScreenDisplay_setScreenTitle.cpp" />

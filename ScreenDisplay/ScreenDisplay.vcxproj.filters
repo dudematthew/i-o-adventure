@@ -39,6 +39,12 @@
     <ClCompile Include="ScreenDisplay_setScreenTitle.cpp">
       <Filter>Pliki nagłówkowe\ScreenDisplay</Filter>
     </ClCompile>
+    <ClCompile Include="ScreenDisplay_ClearConsole.cpp">
+      <Filter>Pliki nagłówkowe\ScreenDisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenDisplay_PreviewDisplay.cpp">
+      <Filter>Pliki nagłówkowe\ScreenDisplay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ScreenDisplay.h">

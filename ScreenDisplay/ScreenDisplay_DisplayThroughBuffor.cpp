@@ -6,14 +6,17 @@ void ScreenDisplay::DisplayThroughBuffor(vector <vector <vector <int>>> map)
 	int bL = size.getScreenWidth();
 	vector <vector <vector <int>>> p;
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-	int mH = map[0].size();
-	int mW = map[0][0].size();
-	unsigned char* data = new unsigned char[mH * bL];
+	int mH = map.size();
+	int mW = map[0].size();
+	unsigned char* data = new unsigned char[(long)(mH * bL)];
 
 	for (int i = 0; i < mH; i++) {
 
 		for (int j = 0; j < mW; j++) {
-			data[j + (i * bL)] = (char)(map[0][i][j]);
+			if(map[i][j][0] != 0)
+				data[j + (i * bL)] = (char)(map[i][j][0]);
+			else
+				data[j + (i * bL)] = (char)(map[i][j][1]);
 		}
 		for (int j = mW; j < bL; j++) {
 			data[j + (i * bL)] = ' ';

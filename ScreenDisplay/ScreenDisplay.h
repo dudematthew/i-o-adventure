@@ -13,4 +13,6 @@ public:
 	static int getScreenHeight();
 	static void setScreenFont(int size);
 	static void DisplayThroughBuffor(vector <vector <vector <int>>> map);
+	static void ClearConsole();
+	static void PreviewDisplay();
 };

@@ -156,6 +156,9 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MapGenerator_AddMapData.cpp" />
+    <ClCompile Include="MapGenerator_ApplyChanges.cpp" />
+    <ClCompile Include="MapGenerator_GetWorkingMapData.cpp" />
     <ClCompile Include="MapGenerator_MapGenerator.cpp" />
     <ClCompile Include="MapGenerator_GenerateMap.cpp" />
     <ClCompile Include="MapGenerator_GetFunctions.cpp" />

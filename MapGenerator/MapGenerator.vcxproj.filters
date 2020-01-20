@@ -50,5 +50,14 @@
     <ClCompile Include="MapGenerator_MapGenerator.cpp">
       <Filter>Pliki nagłówkowe\MapGenerator</Filter>
     </ClCompile>
+    <ClCompile Include="MapGenerator_AddMapData.cpp">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="MapGenerator_GetWorkingMapData.cpp">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="MapGenerator_ApplyChanges.cpp">
+      <Filter>Pliki nagłówkowe\MapGenerator</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

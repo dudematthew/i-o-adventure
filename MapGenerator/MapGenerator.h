@@ -25,14 +25,18 @@ public:
 	MapGenerator(int sizeX, int sizeY);
 	void GenerateMap();
 	string PreviewMap(bool showTop);
+	void SetWorkingMapData(MapData mapData);
+	MapData GetWorkingMapData();
 	int GetGeneratedMapSize(string dimension);
 	vector <vector <vector <int>>> getGeneratedMap();
 	vector <RandomPoint> getRandomPoints();
+	void ApplyChanges();
 private:
 	int _generatedMapSizeX;
 	int _generatedMapSizeY;
 	vector <vector <vector <int>>> _generatedMap;
 	vector <RandomPoint> _randomPoints;
+	MapData _currentMapData;
 };
 
 	

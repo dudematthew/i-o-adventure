@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "ScreenDisplay.h"
 
 void ScreenDisplay::setScreenFont(int size)

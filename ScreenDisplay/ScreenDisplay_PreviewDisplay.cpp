@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "ScreenDisplay.h"
 #include "MapEntity.h"
 #include <iostream>
@@ -90,12 +91,18 @@ void ScreenDisplay::PreviewDisplay()
 	};
 
 	ScreenDisplay b;
+	MapEntity previewEntity(0);
+	COORD previewCoords;
+	previewCoords.X = 1;
+	previewCoords.Y = 1;
+	previewEntity.SetCoordinates(previewCoords);
+	
 	vector <MapEntity> entities;
 	b.setScreenTitle(L"I/O Adventure");
 	b.setScreenFont(24);
 	b.setScreenSize(NULL, NULL);
 	do {
-		b.DisplayThroughBuffor(vect);
+		b.DisplayThroughBuffor(vect, entities);
 
 		cout << "Continue? 1/0";
 		char c = _getch();

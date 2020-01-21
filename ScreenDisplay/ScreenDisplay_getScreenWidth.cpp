@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "ScreenDisplay.h"
 
 int ScreenDisplay::getScreenWidth() {

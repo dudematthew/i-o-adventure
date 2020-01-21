@@ -1,5 +1,5 @@
-﻿#include "ScreenDisplay.h"
-
+﻿#include "pch.h"
+#include "ScreenDisplay.h"
 int main()
 {
 	ScreenDisplay b;

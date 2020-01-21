@@ -17,11 +17,13 @@ public:
 	void DamageSelf(short value);
 	void SetHp(short value);
 	short GetHp();
-	void SetChar(char symbol);
+	void SetChar(int symbol);
 	void SetCoordinates(COORD coordinates);
 	void SetType(string type);
 	void SetVisibility(bool visible);
-
+	short GetId();
+	COORD GetCoordinates();
+	int GetChar();
 
 private:
 	void _SetAliveState(bool alive);

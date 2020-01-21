@@ -4,7 +4,7 @@
 /*
 	Sets entity displayed char
 */
-void MapEntity::SetChar(char symbol)
+void MapEntity::SetChar(int symbol)
 {
 	this->_symbol = symbol;
 }

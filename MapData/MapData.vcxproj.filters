@@ -92,6 +92,12 @@
     <ClCompile Include="MapEntity_GetId.cpp">
       <Filter>Pliki nagłówkowe\MapEntity</Filter>
     </ClCompile>
+    <ClCompile Include="MapEntity_GetCoordinates.cpp">
+      <Filter>Pliki nagłówkowe\MapEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="MapEntity_GetChar.cpp">
+      <Filter>Pliki nagłówkowe\MapEntity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MapData.rc">

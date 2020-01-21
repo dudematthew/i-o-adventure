@@ -22,6 +22,8 @@ public:
 	void SetType(string type);
 	void SetVisibility(bool visible);
 	short GetId();
+	COORD GetCoordinates();
+	int GetChar();
 
 private:
 	void _SetAliveState(bool alive);

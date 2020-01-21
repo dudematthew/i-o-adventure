@@ -1,10 +1,12 @@
 #include "MapEntity.h"
+#include <iostream>
 
 /*
 	Constructor
 	short id: sets id of entity
 	bool visible: sets entity visibility
 */
-MapEntity::MapEntity(short id = 0) {
+MapEntity::MapEntity() {
 	this->_id = id;
+	std::cout << "siema";
 }

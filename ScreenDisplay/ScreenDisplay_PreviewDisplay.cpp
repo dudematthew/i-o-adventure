@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "ScreenDisplay.h"
 #include "MapEntity.h"
 #include <iostream>
@@ -89,15 +88,15 @@ void ScreenDisplay::PreviewDisplay()
 			{ 0 , 219 }
 		}
 	};
-
+	MapEntity cokolwiek;
+	cokolwiek.DamageSelf(5);
+	cout << cokolwiek.GetHp();
+	_getch();
 	ScreenDisplay b;
-	MapEntity previewEntity(0);
+	vector <MapEntity> entities;
 	COORD previewCoords;
 	previewCoords.X = 1;
 	previewCoords.Y = 1;
-	previewEntity.SetCoordinates(previewCoords);
-	
-	vector <MapEntity> entities;
 	b.setScreenTitle(L"I/O Adventure");
 	b.setScreenFont(24);
 	b.setScreenSize(NULL, NULL);

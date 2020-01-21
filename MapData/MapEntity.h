@@ -12,7 +12,7 @@ using namespace std;
 class MapEntity
 {
 public:
-	MapEntity(short id);
+	MapEntity();
 	void DamageSelf(short value);
 	void SetHp(short value);
 	short GetHp();
